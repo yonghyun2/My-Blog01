@@ -1,25 +1,26 @@
 <template>
   <div>
     <ImgBanner imgSrc="https://source.unsplash.com/random/1600x900">
-      <div style="line-height:1.2em;" slot="text">We will find a way.<br> We always have.</div>
+      <div style="line-height:1.2em;" slot="text">Slow and Steady<br> Win the Race.</div>
     </ImgBanner>
     <v-container>
       <!-- About Me -->
       <v-layout my-5>
-        <v-flex xs8>
-          <h2 class="headline mb-3">About Me</h2>
-          <p class="mr-4">안녕하세요, SSAFY 참가자 여러분!<br/>함께 프로젝트를 진행하게 되어서 기쁩니다. Vue는 어렵지 않습니다. 차근차근 하나씩 따라하다보면 어느새 멋진 블로그가
-            만들어져 있을겁니다! 모두 화이팅 하시고, 꼭 완성해서 좋은 평가 있길 바라겠습니다.</p>
+        <v-flex id="aboutme" xs8>
+          <h2 class="headline mb-3" id="about">About Me</h2>
+          <p class="mr-4" id="me">안녕하세요, 저는 SSAFY1기 정용현입니다.<br/>저의 목표는 경쟁력을 갖춘 웹개발자가 되는 것입니다. 프론트 뿐만 아니라 백엔드,서버까지 개발할수 있는
+           Full-Stack개발자가 되도록 열심히 하겠습니다.</p>            
         </v-flex>
-        <v-flex xs4>
-          <v-img :src="getImgUrl('profile.png')" aspect-ratio="1.5"/>
+        <v-flex hidden-xs-only>
+          <v-img :src="getImgUrl('myprofile.jpg')" aspect-ratio="1"/>
         </v-flex>
       </v-layout>
 
       <!-- Portfolio -->
       <v-layout my-5>
         <v-flex xs12>
-          <h2 class="headline my-5 text-xs-center">Portfolio</h2>
+          <h2 class="headline my-5 text-xs-center"><router-link to="/portfolio"><i class="fab fa-blogger fa-2x">Portfolio</i></router-link></h2>
+          <hr>
           <PortfolioList></PortfolioList>
         </v-flex>
       </v-layout>
@@ -27,7 +28,8 @@
       <!-- Post -->
       <v-layout my-5>
         <v-flex xs12>
-          <h2 class="headline my-5 text-xs-center">Post</h2>
+          <h2 class="headline my-5 text-xs-center"><i class="fab fa-angellist fa-2x">Post</i></h2>     
+          <hr>
           <PostList :column="2"></PostList>
         </v-flex>
       </v-layout>
@@ -36,7 +38,7 @@
       <!-- Github -->
       <v-layout my-5>
         <v-flex xs12>
-          <h2 class="headline my-5 text-xs-center">Project</h2>
+          <h2 class="headline my-5 text-xs-center"><i class="fas fa-copy fa-2x">Project</i></h2>
           <RepositoryList></RepositoryList>
         </v-flex>
       </v-layout>
@@ -44,6 +46,38 @@
   </div>
 </template>
 
+<style>  
+    @media (max-width:500px) {
+      #about, #me{
+        text-align: center;
+      }
+      #aboutme{
+        margin: 0 auto;
+      }
+  }
+
+  @media (min-width:960px) {
+    body{
+      font-size: 25px;
+    }
+
+  }
+  @media(max-width:959px) and (min-width:600px) {
+    body{
+      font-size :20px;
+    }
+  }
+  @media (max-width:599px) {
+    body{
+      font-size:15px;
+    }
+    
+  }
+  @media (max-width:500px) {
+
+
+  }
+</style>
 
 
 <script>

@@ -9,7 +9,9 @@
       tile
     >
       <v-card-title class="teal">
-        <strong class="subheading">Get connected with us on social networks!</strong>
+        <strong class="subheading">주소 : 경기도 김포시 장기동 청송마을 302동 101호</strong>
+        <v-spacer></v-spacer>
+           <strong class="subheading">연락처 : 010-2876-0585</strong>
 
         <v-spacer></v-spacer>
 
@@ -25,7 +27,7 @@
       </v-card-title>
 
       <v-card-actions class="grey darken-3 justify-center">
-        &copy;2018 — <strong>Vuetify</strong>
+        &copy;2019 — <strong>Vuetify</strong>
       </v-card-actions>
     </v-card>
   </v-footer>
@@ -41,6 +43,17 @@ export default {
     name : 'Footer',
     components : {
 
+    },
+    data() {
+      return {
+        icons: [
+        'fab fa-facebook',
+        'fab fa-twitter',
+        'fab fa-google-plus',
+        'fab fa-linkedin',
+        'fab fa-instagram'
+      ]
+      }
     }
 }
 </script>

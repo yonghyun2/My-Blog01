@@ -1,12 +1,29 @@
 <template>
   <v-layout py-4 h-100>
     <v-flex row>
-      <div class="caption">{{formatedDate}}</div>
+     
+      <div class="caption">{{formatedDate}}</div><br/>           
       <h2 class="color-333 headline font-weight-light">{{title}}</h2>
-      <p class="mb-1 color-666 font-weight-light subheading">{{body}}</p>
+      <p id="truncate2" class="mb-1 color-666 font-weight-light subheading">{{body}}</p>
     </v-flex>
   </v-layout>
 </template>
+
+<style>
+  #truncate2 {
+  
+    display: block;
+    max-height: 75px;
+    overflow: hidden;
+
+    display: -webkit-box;
+		-webkit-line-clamp : 3;
+		-webkit-box-orient : vertical;
+  }
+
+
+</style>
+
 
 <script>
 export default {

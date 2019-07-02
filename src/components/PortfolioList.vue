@@ -1,6 +1,6 @@
 <template>
   <v-layout mt-5 wrap>
-    <v-flex v-for="i in portfolios.length > limits ? limits : portfolios.length" xs4>
+    <v-flex v-for="i in portfolios.length > limits ? limits : portfolios.length" xs12 xl4 lg4 sm6>
       <Portfolio class="ma-3"
               :date="portfolios[i - 1].created_at.toString()"
               :title="portfolios[i - 1].title"
@@ -22,7 +22,7 @@ export default {
 	name: 'PortfoliosList',
 	props: {
 		limits: {type: Number, default: 3},
-    loadMore: {type: Boolean, default: false}
+    	loadMore: {type: Boolean, default: false}
 	},
 	data() {
 		return {
@@ -38,6 +38,7 @@ export default {
 	methods: {
 		async getPortfolios() {
 			this.portfolios = await FirebaseService.getPortfolios()
+			console.log(this.portfolios[0].body);
 		},
 		loadMorePortfolios() {
 
