@@ -10,19 +10,24 @@
 </template>
 
 <style>
-  #truncate2 {
-  
-    display: block;
-    max-height: 75px;
-    overflow: hidden;
+#truncate2{
+		display:inline-block;		
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
 
-    display: -webkit-box;
-		-webkit-line-clamp : 3;
-		-webkit-box-orient : vertical;
-  }
-
-
+		white-space:normal;
+		line-height: 1.2;
+		height:3.6em;
+		text-align: left;
+		word-wrap:break-word;
+		display:-webkit-box;
+		-webkit-line-clamp:3;
+		-webkit-box-orient:vertical;
+			
+	}
 </style>
+
 
 
 <script>

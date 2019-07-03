@@ -32,5 +32,10 @@ export default new Router({
             component: LoginPage
         },
 
-    ]
+    ],
+    methods: {
+        scrollToTop() {
+            window.scrollTo(0, 0);
+        }
+    },
 })
